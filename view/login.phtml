@@ -1,0 +1,14 @@
+<?php if (array_key_exists("error", $_SESSION)) : ?>
+	<h2><?= $_SESSION["error"] ?></h2>
+	<?php unset($_SESSION["error"]) ?>
+<?php endif ?>
+
+<form action="../controleur/login.php" method="post">
+	<label for="username">Identifiant</label>
+	<input type="text" placeholder="Username or Email" name="login"><br>
+	<label for="password">Password</label>
+	<input type="password" name="password"><br>
+	<input type="submit" value="login">
+</form>
+
+<p>Pas encore de compte <a href="../register.php">Inscrivez-vous</a> </p>
